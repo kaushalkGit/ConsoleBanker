@@ -1,7 +1,7 @@
 package domain;
 
 public enum Type {
-    DEPOSITE,
+    DEPOSIT,
     WITHDRAW,
     TRANSFER_IN,
     TRANSFER_OUT
