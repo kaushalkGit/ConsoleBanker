@@ -1,11 +1,21 @@
 package repository;
 
 import domain.Account;
+import domain.Customer;
 
 import java.util.*;
 
 public class AccountRepository {
     private final Map<String, Account> accountsByNumber=new HashMap<>();
+
+    public List<Account> findByCustomerId(String customerID) {
+        List<Account> result=new ArrayList<>();
+        for(Account a:accountsByNumber.values()){
+            if(a.getCustomerID().equals(customerID))
+                result.add(a);
+        }
+        return result;
+    }
 
     public void save(Account account){
         accountsByNumber.put(account.getAccountNumber(), account);
